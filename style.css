@@ -1,0 +1,10 @@
+/* Create Account Screen */
+
+.input_box {
+  width: 50px;          /* sets size */
+  height: 50px;
+  background-color: #3498db; /* gives it color */
+  border: none;          /* removes default border */
+  border-radius: 8px;    /* optional: rounded corners */
+  cursor: pointer;       /* shows clickable cursor */
+}
