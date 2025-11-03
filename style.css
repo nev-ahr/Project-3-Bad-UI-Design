@@ -1,10 +1,28 @@
 /* Create Account Screen */
 
-.input_box {
-  width: 50px;          /* sets size */
-  height: 50px;
-  background-color: #3498db; /* gives it color */
-  border: none;          /* removes default border */
-  border-radius: 8px;    /* optional: rounded corners */
-  cursor: pointer;       /* shows clickable cursor */
+.content_all {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: #30292F;
 }
+
+.content_row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.content_row p {
+    color: #FFFEDE;
+}
+
+.input_box {
+    width: 50px;          /* sets size */
+    height: 50px;
+    background-color: #3F4045; /* gives it color */
+    border: none;          /* removes default border */
+    border-radius: 8px;    /* optional: rounded corners */
+    cursor: pointer;       /* shows clickable cursor */
+  }
