@@ -1,28 +1,73 @@
 /* Create Account Screen */
 
+.box_layout {
+    display: flex;
+    justify-content: center;
+
+}
+
+body {
+    background-color: #02111B;
+}
+
+h1 {
+    color:#FFFEDE;
+}
+
 .content_all {
     display: flex;
     flex-direction: column;
     border-radius: 16px;
     background-color: #30292F;
+    padding: 20px;
+    align-items: center;
+    border: 3px#30292F;
+    width: 400px;
 }
 
 .content_row {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
+    gap: 30px;
 }
 
 .content_row p {
     color: #FFFEDE;
+    font-size: 30px;
+}
+
+.content_row_special_case {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.content_row_special_case p{
+    font-size: 10px;
+}
+
+.p_hidden p{
+    font-size: 20px;
+    color: #383037;
 }
 
 .input_box {
-    width: 50px;          /* sets size */
-    height: 50px;
-    background-color: #3F4045; /* gives it color */
-    border: none;          /* removes default border */
-    border-radius: 8px;    /* optional: rounded corners */
-    cursor: pointer;       /* shows clickable cursor */
+    width: 150px;         
+    height: 27px;
+    background-color: #3F4045;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
   }
+
+/* This is the same as the input box but its a different size and more blunt*/
+.check_box {
+    width: 20px;         
+    height: 20px;
+    background-color: #3F4045;
+    border: none;
+    cursor: pointer;
+}
