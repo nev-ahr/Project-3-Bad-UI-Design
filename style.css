@@ -159,6 +159,10 @@ h1 {
     width: 800px;
 }
 
+.content_terms_scroll_box p{
+    margin-left: 20px;
+}
+
 .content_terms_scroll_box_paragraph {
     font-size: 12px;
     margin-bottom: 20px;
@@ -193,3 +197,11 @@ h1 {
     margin-right: 10px;
     cursor: pointer;
 }
+
+/* Terms and Conditions Quiz Failed */
+
+.failing_grade {
+    color: #63FF68;
+}
+
+
