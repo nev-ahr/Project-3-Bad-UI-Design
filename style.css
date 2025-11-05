@@ -156,6 +156,7 @@ h1 {
     margin-left: 60px;    
     margin-right: 60px;  
     margin-bottom: 40px;
+    width: 800px;
 }
 
 .content_terms_scroll_box_paragraph {
@@ -175,4 +176,20 @@ h1 {
 .content_terms h1 {
     margin-top: 10px;
     margin-bottom: 40px;
+}
+
+/* Terms and Conditions Quiz*/
+.answer_option {
+    border: 2px #02111B;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* chatgpt showed me that you can do this*/
+.answer_option input {
+    margin-right: 10px;
+    cursor: pointer;
 }
