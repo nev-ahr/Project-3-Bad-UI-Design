@@ -124,6 +124,7 @@ h1 {
     justify-content: center;
     cursor: pointer;
     width: 85px;
+    display: flex;
     margin-bottom: 0px;
     margin-top: 15px;
 }
