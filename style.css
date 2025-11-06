@@ -298,3 +298,40 @@ h1 {
 }
 
 /* Im not a robot*/
+.robot_content_layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+
+}
+
+.robot_outside_box {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 400px;          
+    height: 250px;            
+    background-color: #30292F; 
+    border-radius: 20px;
+}
+
+.robot_content_box {
+    background-color: #3F4045;
+    height: 80px;
+    width: 320px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.robot_check_box {
+    width: 25px;         
+    height: 25px;
+    background-color: #FFFEDE;
+    margin-left: 20px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+}
