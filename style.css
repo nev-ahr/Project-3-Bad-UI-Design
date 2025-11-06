@@ -182,6 +182,16 @@ h1 {
     margin-bottom: 40px;
 }
 
+.click_box{
+    display: inline-block;
+    width: 20px;          /* same size as a radio button */
+    height: 20px;
+    background-color: #042032;  /* unclicked color */
+    border-radius: 50%;         /* makes it a circle; remove for a square */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
 /* Terms and Conditions Quiz*/
 .answer_option {
     border: 2px #02111B;
