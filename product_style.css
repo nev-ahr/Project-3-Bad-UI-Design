@@ -1,15 +1,36 @@
 /* Browse Products Pop Up*/
 body {
     background-color: #02111B;
-    /* margin: 0;
-    padding: 0;
-    background-color: #02111B;
+}
+
+.title_button_layout {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    height: 100vh;
-    overflow: hidden; */
+    position: absolute;
 }
+
+.title_button {
+    position: absolute;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #3F4045;
+    height: 30px;
+    display: flex;  
+    align-items: center;         
+    justify-content: center; 
+    width: 200px;
+}
+
+.title_button p {
+    color: #FFFEDE;
+    font-size: 20px;
+    margin: 0;
+}
+
+.title_button:nth-child(1) { top: 20px; left: 20px; }
+.title_button:nth-child(2) { top: 80px; left: 200px; }
+.title_button:nth-child(3) { top: 40px; left: 350px; }
+
 
 .page_layout {
     display: flex;
@@ -86,14 +107,85 @@ body {
 }
 
 .scatter-item:nth-child(9) {
-    top: 650px;   /* moved down */
+    top: 650px;  
     left: 100px;
     z-index: 1;
 }
 
 .scatter-item:nth-child(10) {
-    top: 750px;   /* moved down */
+    top: 750px;
     left: 380px;
+    z-index: 1;
+}
+
+.scatter-item-right {
+    display: block;
+    position: absolute; /* allows us to place each image anywhere */
+}
+
+.scatter-item-right img {
+    display: block;
+    height: 200px;
+    width: auto;
+    border-radius: 12px;
+}
+
+.scatter-item-right:nth-child(1) {
+    top: 60px; 
+    left: 850px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(2) {
+    top: 170px; 
+    left: 1000px;
+    z-index: 1;
+}
+.scatter-item-right:nth-child(3) {
+    top: 10px; 
+    left: 1250px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(4) {
+    top: 380px; 
+    left: 890px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(5) {
+    top: 330px; 
+    left: 1150px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(6) {
+    top: 230px;  
+    left: 1310px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(7) {
+    top: 560px;   
+    left: 930px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(8) {
+    top: 700px; 
+    left: 1100px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(9) {
+    top: 650px;
+    left: 1250px;
+    z-index: 1;
+}
+
+.scatter-item-right:nth-child(10) {
+    top: 570px;
+    left: 1350px;
     z-index: 1;
 }
 
