@@ -48,10 +48,13 @@
 
             <!-- i changed this --> 
             <div class="content_row_button">
-            <input type="checkbox" id="termsCheckbox" disabled>
-            <a href="terms_cond.html" class="terms_link" style="text-decoration:none;">
+                <input type="checkbox" id="termsCheckbox" disabled>
+                <a href="terms_cond.html"
+                class="terms_link"
+                onclick="localStorage.removeItem('quizCompleted'); sessionStorage.removeItem('returnFromQuiz')">
                 <p>I agree to the terms and conditions</p>
-            </a>
+                </a>
+
             </div>
 
 
