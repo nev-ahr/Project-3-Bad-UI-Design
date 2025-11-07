@@ -1,4 +1,200 @@
 /* Browse Products Pop Up*/
-.nav {
-    
+body {
+    background-color: #02111B;
+    /* margin: 0;
+    padding: 0;
+    background-color: #02111B;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 100vh;
+    overflow: hidden; */
 }
+
+.page_layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.image_layout {
+    /* display: flex; */
+    position: relative;
+    /* flex: 1; */
+    height: 100vh;
+    width: 50%;
+    overflow: visible;
+}
+
+.scatter-item {
+    display: block;
+    position: absolute; /* allows us to place each image anywhere */
+}
+
+.scatter-item img {
+    display: block;
+    height: 200px;
+    width: auto;
+    border-radius: 12px;
+}
+
+.scatter-item:nth-child(1) {
+    top: 80px;
+    left: 40px;
+    z-index: 2;
+}
+.scatter-item:nth-child(2) {
+    top: 180px;   /* moved down */
+    left: 200px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(3) {
+    top: 100px;   /* moved down */
+    left: 340px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(4) {
+    top: 150px;   /* moved down */
+    left: 490px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(5) {
+    top: 420px;   /* moved down */
+    left: 80px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(6) {
+    top: 500px;   /* moved down */
+    left: 300px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(7) {
+    top: 400px;   /* moved down */
+    left: 380px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(8) {
+    top: 600px;   /* moved down */
+    left: -50px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(9) {
+    top: 650px;   /* moved down */
+    left: 100px;
+    z-index: 1;
+}
+
+.scatter-item:nth-child(10) {
+    top: 750px;   /* moved down */
+    left: 380px;
+    z-index: 1;
+}
+
+.image_layout a {
+    display: block;
+    /* position: absolute; */
+}
+
+.image_layout img {
+    /* position: absolute; */
+    height: 200px;
+    width: auto;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+
+.title_button {
+    color: #3F4045;
+}
+
+.nav_layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_bar {
+    background-color: #14213D;
+    color: #FFFEDE;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    position: fixed;
+    /* Chat helped me with centering this*/
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+    border-radius: 18px;
+}
+
+.nav_bar_logo_layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_bar .logo {
+    width: 30px;
+    height: 30px;
+}
+
+.nav_bar h1 {
+    color: #FFFEDE;
+    text-align: left;
+}
+
+.icon_group {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* or center if you prefer */
+    gap: 20px; /* space between icons */
+    margin-top: 40px; /* optional spacing below logo */
+    position: relative;     /* establishes a positioning context */
+    width: 100%;
+    height: 100%;
+}
+
+.icon_group i {
+    color: #FFFEDE;
+    font-size: 24px; /* adjust as you like */
+    cursor: pointer;
+    transition: color 0.3s;
+    position: absolute;
+}
+
+/* Chat helped me randomly place these vertically*/
+.icon_group i:nth-child(1) { top: 10px; }
+.icon_group i:nth-child(2) { top: 40px; }
+.icon_group i:nth-child(3) { top: 220px; }
+.icon_group i:nth-child(4) { top: 350px; }
+.icon_group i:nth-child(5) { top: 640px; }
+.icon_group i:nth-child(6) { top: 650px; }
+
+/* .image_scatter {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.image_scatter img {
+    width: 160px;
+    height: auto;
+    position: absolute;
+    border-radius: 12px;
+    transition: transform 0.3s;
+} */
