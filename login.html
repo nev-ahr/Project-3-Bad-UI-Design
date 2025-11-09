@@ -1,44 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    >
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
 
+  <!-- Font Awesome for the eye icon -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-    <div class="box_layout_success">
-        <div class="content_all">
-            <h1>Login to Account</h1>
+  <div class="box_layout_success">
+    <div class="content_all">
+      <h1>
+        <span class="login_click">
+          <a href="im_not_a_robot.html">Login</a>
+        </span>
+      </h1>
 
-            <div class="content_row">
-                <p>Password</p>
-                <button class="input_box"></button>
-            </div>
+      <!-- Password row -->
+      <div class="content_row">
+        <p>Password</p>
+        <!-- real input so you can type -->
+        <input id="passwordField"
+               class="input_box"
+               name="password"
+               type="password"
+               autocomplete="off"
+               spellcheck="false"
+               aria-label="Password"/>
+      </div>
 
-            <div class="content_row">
-                <a href="login_button_toggle.html">
-                <i class="fa-solid fa-eye-slash"></i>
-                </a>
-                <button class="input_box"></button>
-                <p>Username</p>
-            </div>
+      <!-- Username row -->
+      <div class="content_row">
+        <!-- eye toggle: no navigation -->
+        <a id="togglePassword" style="cursor:pointer;">
+          <i id="eyeIcon" class="fa-solid fa-eye-slash" aria-hidden="true"></i>
+        </a>
 
-            <div class="reset_cont_button_layout">
-                <a href="login_pass_reset.html">
-                    <button class="reset_pass_button">
-                        <p>Reset Password</p>
-                    </button>
-                </a>
-            </div>
-        </div>
+        <!-- real input so you can type -->
+        <input id="usernameField"
+               class="input_box"
+               name="username"
+               type="text"
+               autocomplete="off"
+               spellcheck="false"
+               aria-label="Username"/>
+
+        <p>Username</p>
+      </div>
+
+      <div class="reset_cont_button_layout">
+        <a href="login_pass_reset.html">
+          <button class="reset_pass_button"><p>Reset Password</p></button>
+        </a>
+
+        <!-- keep your existing Login button/link -->
+        <a href="index.html">
+          <button class="continue_button"><p>Login</p></button>
+        </a>
+      </div>
     </div>
+  </div>
+
+  <!-- Tiny script to toggle the eye (no page change) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const pass = document.getElementById("passwordField");
+      const toggle = document.getElementById("togglePassword");
+      const eye = document.getElementById("eyeIcon");
+
+      if (toggle && eye && pass) {
+        // start hidden
+        pass.type = "password";
+
+        const sync = () => {
+          const visible = pass.type === "text";
+          eye.classList.toggle("fa-eye", visible);
+          eye.classList.toggle("fa-eye-slash", !visible);
+          toggle.title = visible ? "Hide password" : "Show password";
+          toggle.setAttribute("aria-label", toggle.title);
+        };
+
+        toggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          pass.type = pass.type === "password" ? "text" : "password";
+          sync();
+        });
+
+        sync();
+      }
+    });
+  </script>
 </body>
 </html>
