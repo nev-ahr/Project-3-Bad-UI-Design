@@ -331,12 +331,13 @@ body {
     cursor: pointer;
 }
 
-.header_images layout {
+.header_images_layout {
     display: flex;
     justify-content: center;
-    
+    flex-direction: row;
 }
 
-.header_images {
-
+.header_images img{
+    height: 50px;
+    width: auto;
 }
