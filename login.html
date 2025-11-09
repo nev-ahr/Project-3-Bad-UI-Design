@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login</title>
 
-  <!-- Font Awesome for the eye icon -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
@@ -21,10 +20,9 @@
         </span>
       </h1>
 
-      <!-- Password row -->
       <div class="content_row">
         <p>Password</p>
-        <!-- real input so you can type -->
+        <!-- for typing the passworkd -->
         <input id="passwordField"
                class="input_box"
                name="password"
@@ -34,14 +32,14 @@
                aria-label="Password"/>
       </div>
 
-      <!-- Username row -->
+
       <div class="content_row">
-        <!-- eye toggle: no navigation -->
+        <!-- open eye and close eye icon -->
         <a id="togglePassword" style="cursor:pointer;">
           <i id="eyeIcon" class="fa-solid fa-eye-slash" aria-hidden="true"></i>
         </a>
 
-        <!-- real input so you can type -->
+        <!-- for typing the username -->
         <input id="usernameField"
                class="input_box"
                name="username"
@@ -58,7 +56,6 @@
           <button class="reset_pass_button"><p>Reset Password</p></button>
         </a>
 
-        <!-- keep your existing Login button/link -->
         <a href="index.html">
           <button class="continue_button"><p>Login</p></button>
         </a>
@@ -66,6 +63,7 @@
     </div>
   </div>
 
+  <!-- this was all chat-->
   <!-- Tiny script to toggle the eye (no page change) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -74,9 +72,6 @@
       const eye = document.getElementById("eyeIcon");
 
       if (toggle && eye && pass) {
-        // start hidden
-        pass.type = "password";
-
         const sync = () => {
           const visible = pass.type === "text";
           eye.classList.toggle("fa-eye", visible);
@@ -91,8 +86,88 @@
           sync();
         });
 
+        // start hidden
+        pass.type = "password";
         sync();
       }
+    });
+  </script>
+
+  <!-- 2) LOGIN GUARD – only allow navigation if creds match localStorage.demo_account -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const userEl = document.getElementById("usernameField");
+      const passEl = document.getElementById("passwordField");
+
+      // The two links you already have:
+      const titleLink  = document.querySelector(".login_click a");                 // "Login" title link
+      const buttonLink = document.querySelector(".continue_button")?.closest("a"); // bottom "Login" link
+
+      // Error message area (shown under the password row)
+      let msg = document.querySelector(".login-errors");
+      if (!msg) {
+        msg = document.createElement("div");
+        msg.className = "login-errors";
+        msg.style.marginTop = "10px";
+        msg.style.fontSize  = "12px";
+        msg.style.color     = "lightgreen";
+        (passEl?.parentElement || document.body).appendChild(msg);
+      }
+
+      const readSaved = () => {
+        try { return JSON.parse(localStorage.getItem("demo_account") || "null"); }
+        catch { return null; }
+      };
+
+      function checkCreds() {
+        msg.style.color = "lightgreen";
+        msg.textContent = "";
+
+        const saved = readSaved();
+        const u = (userEl?.value || "").trim();
+        const p = passEl?.value || "";
+
+        if (!u || !p) {
+          msg.textContent = "Please enter both username and password.";
+          return false;
+        }
+        if (!saved) {
+          msg.textContent = "No saved account found. Please create an account first.";
+          return false;
+        }
+        if (u !== saved.username || p !== saved.password) {
+          msg.textContent = "Invalid username or password.";
+          return false;
+        }
+
+        // success
+        msg.style.color = "lightgreen";
+        msg.textContent = "✅ Login successful!";
+        localStorage.setItem("logged_in_user", u);
+        return true;
+      }
+
+      function guardLink(a) {
+        if (!a) return;
+        a.addEventListener("click", (e) => {
+          if (!checkCreds()) e.preventDefault();
+        });
+      }
+
+      guardLink(titleLink);
+      guardLink(buttonLink);
+
+      // Allow Enter key to submit (navigates using the bottom link if present, else the title link)
+      [userEl, passEl].forEach((el) => {
+        el?.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            if (checkCreds()) {
+              const target = buttonLink || titleLink;
+              if (target && target.href) window.location.href = target.href;
+            }
+          }
+        });
+      });
     });
   </script>
 </body>
