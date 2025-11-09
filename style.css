@@ -112,6 +112,7 @@ h1 {
 
 .continue_button_layout p{
     color: #FFFEDE;
+    text-decoration: none;
 }
 
 .continue_button {
@@ -371,6 +372,35 @@ h1 {
     border-radius: 8px;
 }
 
+.delete_account_button_layout {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    margin-right: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.delete_account_button_layout p{
+    color: #FFFEDE;
+    text-decoration: none;
+}
+
+.delete_account_button {
+    border: #3F4045;
+    background-color: #3F4045;
+    border-radius: 20px;
+    height: 35px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 100px;
+    display: flex;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
 
 /* this was chat */
 /* Make text readable on a light scroll box */
@@ -408,3 +438,62 @@ h1 {
 .content_terms_scroll_box::-webkit-scrollbar-thumb:hover {
   background-color: #999;
 }
+/* this was chat for hovering */
+.continue_button {
+  background-color: #3F4045;
+  border-radius: 20px;
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;   /* anchor the ::after inside the button */
+  overflow: hidden;     /* keep ::after contained */
+  transition: background-color .25s ease;
+}
+
+.continue_button p {
+  color: #FFFEDE;
+  margin: 0;
+  transition: opacity .25s ease;
+}
+
+/* Hover: fade out "Login" and fade in "Delete Account" centered */
+.continue_button:hover { background-color: #3F4045; }
+
+.continue_button:hover p { opacity: 0; }
+
+.continue_button::after {
+  content: "Delete Account";
+  color: #FFFEDE;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.continue_button:hover::after { opacity: 1; }
+
+/* (optional) remove link underline/focus outline around the wrapping <a> */
+.reset_cont_button_layout a {
+  text-decoration: none;
+  outline: none;
+}
+
+
+/* Remove link underlines for all button links */
+a {
+  text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
