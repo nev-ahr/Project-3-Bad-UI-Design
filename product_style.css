@@ -301,6 +301,10 @@ body {
     justify-content: center;
 }
 
+.pop_up_box_button_layout a{
+    text-decoration: none;
+}
+
 .pop_up_box_button {
     height: 44px;
     width: 260px;
@@ -325,4 +329,14 @@ body {
     color: #454444;
     font-size: 24px;
     cursor: pointer;
+}
+
+.header_images layout {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.header_images {
+
 }
