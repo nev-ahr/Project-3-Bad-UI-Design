@@ -137,6 +137,22 @@
             </div>
         </div>
     </div>
-</body>
 
+  <script>
+    // Disable the Continue button until the user scrolls to the bottom
+    const box = document.querySelector(".content_terms_scroll_box");
+    const button = document.querySelector(".continue_button");
+
+    if (box && button) {
+      button.disabled = true; // start disabled
+
+      box.addEventListener("scroll", () => {
+        const atBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 5;
+        if (atBottom) {
+          button.disabled = false; // enable when fully scrolled
+        }
+      });
+    }
+  </script>
+</body>
 </html>

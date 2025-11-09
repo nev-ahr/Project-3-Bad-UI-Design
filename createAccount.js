@@ -189,6 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     errorDiv.style.color = "lightgreen";
     errorDiv.textContent = "✅ All checks passed! Account saved.";
-    // window.location.href = "ca_success.html"; // optional
+    window.location.href = "ca_success.html"; // optional
   });
 });

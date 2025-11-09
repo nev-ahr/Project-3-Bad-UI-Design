@@ -370,3 +370,41 @@ h1 {
     width: 130px;
     border-radius: 8px;
 }
+
+
+/* this was chat */
+/* Make text readable on a light scroll box */
+.content_terms_scroll_box,
+.content_terms_scroll_box p,
+.content_terms_scroll_box h1,
+.content_terms_scroll_box h2,
+.content_terms_scroll_box h3 {
+  color: #FFFEDE !important;  /* dark text */
+  opacity: 1 !important;      /* in case a parent sets opacity */
+}
+
+/* If you set the box to be light earlier, this keeps it */
+.content_terms_scroll_box {
+  background-color: #3F4045;  /* light background */
+  border: 2px solid #d6d6d6;
+  border-radius: 8px;
+  height: 350px;
+  width: 90%;
+  margin: 0 auto 20px;
+  padding: 12px 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+/* Optional scrollbar styling */
+.content_terms_scroll_box::-webkit-scrollbar {
+  width: 8px;
+}
+.content_terms_scroll_box::-webkit-scrollbar-thumb {
+  background-color: #c0c0b4;
+  border-radius: 4px;
+}
+.content_terms_scroll_box::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
