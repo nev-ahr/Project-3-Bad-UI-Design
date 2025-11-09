@@ -332,12 +332,127 @@ body {
 }
 
 .header_images_layout {
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    align-items: flex-start;
+    /* overflow: hidden; */
+    position: relative;
+    margin-top: 0;
+    padding: 0;
 }
 
-.header_images img{
-    height: 50px;
+.header_images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.header_images img {
+    height: 380px;       
     width: auto;
+    margin-left: -60px;
+    border-radius: 10px;
+}
+
+.header_images img:first-child {
+    transform: rotate(-8deg);
+    margin-left: 0;        
+    z-index: 2;
+}
+
+.header_images img:nth-child(2),
+.header_images img:nth-child(3) {  
+    z-index: 3;
+}
+
+.header_images img:last-child {
+    transform: rotate(8deg);
+    z-index: 2;
+}
+
+.title_row_layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.title_row {
+    display: flex;                  /* make items line up in a row */
+    justify-content: space-between; /* distribute images and text */
+    align-items: center;  
+    justify-content: center;
+    color: #FFFEDE;
+    gap: 80px;
+}
+
+.title_row img {
+    height: 250px;
+    width: auto;
+}
+
+.title_layout {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    color: #FFFEDE;
+    font-size: 40px;
+}
+
+.explore_button_layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.explore_your_options_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFEDE;
+    background-color: #30292F;
+    width: 350px;
+    border-radius: 20px;
+    height: 60px;
+}
+
+.explore_your_options_button p {
+    font-size: 35px;
+}
+
+.first_last_row {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+}
+
+.first_last_row a {
+    font-size: 35px;
+    color: #FFFEDE;
+    text-decoration: none;
+}
+
+.middle_row {
+    display: flex;
+    justify-content: center;
+}
+
+.middle_row a {
+    font-size: 35px;
+    color: #FFFEDE;
+    text-decoration: none;
+    margin-bottom: 100px;
 }
