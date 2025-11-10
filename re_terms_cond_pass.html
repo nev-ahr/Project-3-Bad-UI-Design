@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions Pass</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box_layout_terms_cond">
+        <div class="content_terms">
+            <h1>Quiz Results</h1>
+
+            <div class="content_terms_scroll_box">
+                <h1>Your score: <span class="passing_grade">0/50 (0%)</span> Incorrect</h1>
+                <p>Im so proud of you for remembering. Lets continue to checkout!</p>
+            </div>
+
+            <div class="continue_button_layout">
+                <a href="index.html?fromQuiz=1"
+                onclick="localStorage.setItem('quizCompleted','true')">
+                <button class="continue_button"><p>Continue</p></button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
