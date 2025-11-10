@@ -431,30 +431,60 @@ body {
     font-size: 35px;
 }
 
-.first_last_row {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 100px;
-}
+/* ===== Card Pass Layout Fix ===== */
 
-.first_last_row a {
-    font-size: 35px;
-    color: #FFFEDE;
-    text-decoration: none;
+.first_last_row {
+  display: flex;
+  justify-content: space-between;  /* pushes first and last items to corners */
+  align-items: flex-start;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 80px;
 }
 
 .middle_row {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;          /* centers middle one */
+  align-items: flex-start;
+  margin-bottom: 80px;
 }
 
+/* Make sure each link doesn’t stretch weirdly */
+.first_last_row a,
 .middle_row a {
-    font-size: 35px;
-    color: #FFFEDE;
-    text-decoration: none;
-    margin-bottom: 100px;
+  text-decoration: none;
+  color: #FFFEDE;
+  font-size: 26px;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+/* Hover reveal for plan details */
+.first_last_row a:hover::after,
+.middle_row a:hover::after {
+  content: attr(data-details);
+  position: absolute;
+  top: 40px;                        /* position text below */
+  left: 0;
+  color: #FFFEDE;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: rgba(63, 64, 69, 0.9);
+  border-radius: 10px;
+  padding: 10px 14px;
+  white-space: pre-line;            /* allows line breaks */
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+  z-index: 10;
+}
+
+/* small fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 }
 
 body p {
@@ -777,9 +807,73 @@ body p {
   transform: translate(8px, -50%);
 }
 
-/* OPTIONAL: open to the LEFT instead (uncomment and remove the RIGHT version above)
-.nav_bar .icon_group i::after{ right:120%; left:auto; }
-.nav_bar .icon_group i:hover::after,
-.nav_bar .icon_group i:focus-visible::after { transform: translate(-8px,-50%); }
-*/
+/* ===== Card Pass plans hover-reveal ===== */
+.cardpass-plans {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 80px;                 /* row / column gap */
+  max-width: 900px;
+  margin: 40px auto 100px;        /* centers under your title block */
+}
+
+.plan {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #FFFEDE;
+  padding: 6px 4px;
+  border-radius: 10px;
+  transition: background-color .18s ease, box-shadow .18s ease;
+}
+
+.plan h3 {
+  margin: 0;
+  font-size: 28px;                /* tweak to match your headings */
+  font-weight: 600;
+}
+
+.plan .details {
+  overflow: hidden;
+  max-height: 0;                  /* collapsed */
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height .35s ease,
+    opacity .18s ease,
+    transform .18s ease;
+  will-change: max-height, opacity, transform;
+  padding-left: 0;                /* no indent when hidden */
+}
+
+/* hover/focus shows details */
+.plan:hover,
+.plan:focus-visible,
+.plan.open {
+  background-color: rgba(255,255,255,0.06);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+}
+
+.plan:hover .details,
+.plan:focus-within .details,
+.plan.open .details {
+  max-height: 220px;              /* increase if your list is taller */
+  opacity: 1;
+  transform: translateY(0);
+  padding-left: 16px;             /* indent bullets when visible */
+}
+
+.plan .details ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.plan .details ul ul {
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan, .plan .details { transition: none; }
+}
 
