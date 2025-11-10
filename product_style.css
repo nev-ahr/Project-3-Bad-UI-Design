@@ -512,3 +512,53 @@ body p {
     height: 500px;
     width: 700px;
 }
+/* ==== Tooltips for center .nav_bar icons ==== */
+.nav_bar { overflow: visible; z-index: 10; }   /* let bubbles escape the box */
+
+.nav_bar .icon_group { position: relative; }     /* tooltip positioning context */
+
+/* make each icon an anchor for its tooltip */
+.nav_bar .icon_group i {
+  position: absolute;          /* you already place them with nth-child */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;                 /* hit area so hover is easy */
+  height: 32px;
+  color: #FFFEDE;
+  cursor: pointer;
+}
+
+/* the bubble */
+.nav_bar .icon_group i::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 120%;                  /* to the RIGHT of the icon */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #3F4045;
+  color: #FFFEDE;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;        /* bubble doesn’t steal hover */
+  transition: opacity .18s ease, transform .18s ease;
+  z-index: 2000;
+}
+
+/* show on hover or keyboard focus */
+.nav_bar .icon_group i:hover::after,
+.nav_bar .icon_group i:focus-visible::after {
+  opacity: 1;
+  transform: translate(8px, -50%);
+}
+
+/* OPTIONAL: open to the LEFT instead (uncomment and remove the RIGHT version above)
+.nav_bar .icon_group i::after{ right:120%; left:auto; }
+.nav_bar .icon_group i:hover::after,
+.nav_bar .icon_group i:focus-visible::after { transform: translate(-8px,-50%); }
+*/
