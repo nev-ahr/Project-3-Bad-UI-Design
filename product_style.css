@@ -541,6 +541,10 @@ body p {
     color: #FFFEDE;
 }
 
+.left_column p{
+    color: #FFFEDE;
+}
+
 .right_column {
     flex: 1;            
     display: flex;
@@ -709,6 +713,7 @@ body p {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    color: #FFFEDE;
 }
 
 .cart_inner_box_row_right:last-child img {
@@ -765,6 +770,7 @@ body p {
 
 .big_checkout_button p {
     font-size: 60px;
+    color: #FFFEDE;
 }
 
 .checkout_box {
