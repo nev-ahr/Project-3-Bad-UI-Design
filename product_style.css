@@ -506,6 +506,10 @@ body p {
     gap: 20px; 
 }
 
+.left_column h1 {
+    color: #FFFEDE;
+}
+
 .right_column {
     flex: 1;            
     display: flex;
@@ -729,6 +733,58 @@ body p {
 
 .big_checkout_button p {
     font-size: 60px;
+}
+
+.checkout_box {
+    background-color: #30292F;
+    /* height: 700px; */
+    width: 700px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.checkout_box h1:first-child {
+    font-size: 35px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.checkout_box h1 {
+    font-size: 35px;
+    margin-left: 40px;
+}
+
+.checkout_box div {
+    margin-left: 40px;
+}
+
+.checkout_box div:last-child {
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+.input_box {
+    height: 50px;
+    width: 400px;
+    background-color: #3F4045;
+    border-radius: 20px;
+}
+
+.checkout_description_box {
+    background-color: #30292F;
+    height: 830px;
+    width: 700px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout_description_box p {
+    font-size: 35px;
 }
 
 
