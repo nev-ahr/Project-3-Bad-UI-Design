@@ -540,7 +540,7 @@ body p {
     background-color: #30292F;
     height: 300px;
     width: 700px;
-<<<<<<< HEAD
+
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -730,8 +730,8 @@ body p {
 .big_checkout_button p {
     font-size: 60px;
 }
-=======
-}
+
+
 /* ==== Tooltips for center .nav_bar icons ==== */
 .nav_bar { overflow: visible; z-index: 10; }   /* let bubbles escape the box */
 
@@ -782,4 +782,4 @@ body p {
 .nav_bar .icon_group i:hover::after,
 .nav_bar .icon_group i:focus-visible::after { transform: translate(-8px,-50%); }
 */
->>>>>>> will
+
